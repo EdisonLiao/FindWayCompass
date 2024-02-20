@@ -1,4 +1,4 @@
-package dev.synapsetech.compass
+package com.findway.compass
 
 import android.graphics.Paint
 import android.os.Build
@@ -23,7 +23,7 @@ import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.synapsetech.compass.ui.theme.CompassTheme
+import com.findway.compass.ui.theme.CompassTheme
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -53,7 +53,7 @@ fun MainPage() {
     val scope = rememberCoroutineScope()
 
     DisposableEffect(Unit) {
-        val dataManager = SensorDataManager(context)
+        val dataManager = CompassSensorDataManager(context)
         dataManager.init()
 
         val job = scope.launch {

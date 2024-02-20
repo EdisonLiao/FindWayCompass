@@ -1,4 +1,4 @@
-package dev.synapsetech.compass
+package com.findway.compass
 
 import org.junit.Test
 

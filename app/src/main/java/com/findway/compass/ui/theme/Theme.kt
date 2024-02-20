@@ -1,4 +1,4 @@
-package dev.synapsetech.compass.ui.theme
+package com.findway.compass.ui.theme
 
 import android.app.Activity
 import android.os.Build

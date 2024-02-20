@@ -1,4 +1,4 @@
-package dev.synapsetech.compass
+package com.findway.compass
 
 import android.content.Context
 import android.hardware.Sensor
@@ -7,14 +7,14 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import kotlinx.coroutines.channels.Channel
 
-class SensorDataManager (context: Context): SensorEventListener {
-    private val sensorManager by lazy {
+class CompassSensorDataManager (context: Context): SensorEventListener {
+    private val compassSensorManager by lazy {
         context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
     }
 
     fun init() {
-        sensorManager.registerListener(
-            this, sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+        compassSensorManager.registerListener(
+            this, compassSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
             SensorManager.SENSOR_DELAY_GAME
         )
     }
@@ -30,6 +30,6 @@ class SensorDataManager (context: Context): SensorEventListener {
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
 
     fun cancel() {
-        sensorManager.unregisterListener(this);
+        compassSensorManager.unregisterListener(this);
     }
 }

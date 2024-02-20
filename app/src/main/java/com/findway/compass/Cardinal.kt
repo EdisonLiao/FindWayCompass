@@ -1,4 +1,4 @@
-package dev.synapsetech.compass
+package com.findway.compass
 
 enum class Cardinal(val letter: String, val degree: Int) {
     NORTH("N", 0),
